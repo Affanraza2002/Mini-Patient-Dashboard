@@ -1,5 +1,5 @@
 # Mini Patient Dashboard (Pharmoris)
-(for data fetching and caching )
+
 A complete full-stack application for managing patient records with a Node.js/Express backend and React frontend.
 
 ## Tech Stack 🚀
@@ -10,9 +10,9 @@ A complete full-stack application for managing patient records with a Node.js/Ex
 - **Package Manager**: npm
 - **Database**: MongoDB (local or MongoDB Atlas)
 
-## Project Structure
+## 📁 Project Structure
 
-\`\`\`
+```
 root/
 ├── backend/
 │   ├── server.js
@@ -43,9 +43,9 @@ root/
 │   └── package.json
 │
 └── README.md
-\`\`\`
+```
 
-## Setup Instructions
+## ⚙️Setup Instructions
 
 ### Prerequisites
 
@@ -56,67 +56,67 @@ root/
 ### Backend Setup
 
 1. Navigate to the backend directory:
-   \`\`\`bash
+   ```bash
    cd backend
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. Create a `.env` file based on `.env.example`:
-   \`\`\`bash
+   ```bash
    cp .env.example .env
-   \`\`\`
+   ```
 
 4. Update `.env` with your MongoDB connection string:
-   \`\`\`
+   ```
    MONGODB_URI=mongodb://localhost:27017/
    PORT=5000
-   \`\`\`
+   ```
 
 5. Seed the database with sample data:
-   \`\`\`bash
+   ```bash
    npm run seed
-   \`\`\`
+   ```
 
 6. Start the backend server:
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
    The backend will run on `http://localhost:5000`
 
 ### Frontend Setup
 
 1. In a new terminal, navigate to the frontend directory:
-   \`\`\`bash
+   ```bash
    cd frontend
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. Start the development server:
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
    The frontend will run on `http://localhost:5173`
 
 4. Open your browser and navigate to `http://localhost:5173`
 
-## Running Tests
+## 🧪 Running Tests
 
 ### Backend Unit Tests (Jest)
 
-\`\`\`bash
+```bash
 cd backend
 npm test
-\`\`\`
+```
 
 This runs Jest tests that verify:
 - GET /patients returns an array with at least 2 patients
@@ -127,7 +127,7 @@ This runs Jest tests that verify:
 
 First, ensure both backend and frontend are running:
 
-\`\`\`bash
+```bash
 # Terminal 1: Backend
 cd backend
 npm run dev
@@ -139,7 +139,7 @@ npm run dev
 # Terminal 3: Run tests
 cd frontend
 npm test
-\`\`\`
+```
 
 Playwright tests verify:
 - Loading state displays correctly
@@ -150,13 +150,15 @@ Playwright tests verify:
 
 ### Quick tests
 
-# Measure latency + show body
-curl -i http://localhost:5000/patients
-
+# Measure latency + show body  
+```bash
+  curl -i http://localhost:5000/patients
+```
 # Measure time precisely
+```bash
 curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhost:5000/patients
-
-## Features
+```
+## 💡 Features
 
 ### Backend API
 
@@ -174,20 +176,20 @@ curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhos
 - **Refresh Button**: Manual data refetch capability
 - **React Query**: Automatic caching and state management
 
-## Scalability Notes for 1,000+ Patients
+## 📈 Scalability Notes for 1,000+ Patients
 
 ### Database Optimization
 
 1. **Indexing**: Add indexes on frequently queried fields:
-   \`\`\`javascript
+   ```javascript
    patientSchema.index({ status: 1 });
    patientSchema.index({ name: 1 });
-   \`\`\`
+   ```
 
 2. **Pagination**: Implement cursor-based or offset pagination:
-   \`\`\`javascript
+   ```javascript
    GET /patients?page=1&limit=50
-   \`\`\`
+   ```
 
 3. **Database Sharding**: For very large datasets, consider MongoDB sharding by patient ID or status.
 
@@ -205,7 +207,7 @@ curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhos
 3. **CDN**: Cache static frontend assets
 4. **Database Replication**: Set up MongoDB replica sets for high availability
 
-## Development Notes
+## 🧰 Development Notes
 
 - Backend uses ES6 modules (type: "module" in package.json)
 - Frontend uses Vite for fast development and building
@@ -213,7 +215,7 @@ curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhos
 - Playwright tests run against the live frontend application
 - All API errors are logged to console for debugging
 
-## Troubleshooting
+## 🧾Troubleshooting
 
 ### MongoDB Connection Error
 - Ensure MongoDB is running locally or update MONGODB_URI in .env
@@ -229,7 +231,7 @@ curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhos
 - Check that MongoDB is accessible for unit tests
 - Review console logs for detailed error messages
 
-### Add-On Features 
+## 💫 Add-On Features 
 - Add Patient :- Click Add Patient Button to open a form . Enter patient details.
                  Submittiong add the patient to the database.
 - Delete Patient :- Each patient row have a delete button. Deleting a patient remove
@@ -238,12 +240,10 @@ curl -s -o /dev/null -w "HTTP %{http_code} — %{time_total}s\n" http://localhos
 - Automatic Refresh:- Table updates instantly after adding or deleting, with React Query
                       handling caching and state.
 
-### 🧑‍💻 Author
+## 🧑‍💻 Author
 
 Developed by Affanraza Shaikh
 
-📧 razaaffan08@gmail.com
-
-📞 +91 9359968907
-🔗 
-
+📧 **Email:** [razaaffan08@gmail.com](mailto:razaaffan08@gmail.com)  
+📞 **Phone:** +91 9359968907  
+🔗 **Links:** [LinkedIn](https://linkedin.com/in/affanraza-shaikh-268549255) | [GitHub](https://github.com/Affanraza2002) | [Portfolio](https://meaffan.vercel.app/)
