@@ -2,6 +2,13 @@
 
 A complete full-stack application for managing patient records with a Node.js/Express backend and React frontend.
 
+## ## Preview 🧠
+
+See [PREVIEW.md](./PREVIEW.md) for screenshots of the project in action, including:
+
+- Backend: run & test
+- Frontend: run & test
+
 ## Tech Stack 🚀
 
 - **Backend**: Node.js + Express.js + MongoDB (Mongoose ORM)
